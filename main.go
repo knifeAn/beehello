@@ -1,9 +1,9 @@
 package main
 
 import (
+	_ "beehello/routers"
 	"fmt"
 	"github.com/astaxie/beego"
-	_ "beehello/routers"
 )
 
 func main() {
