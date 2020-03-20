@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/astaxie/beego"
-	_ "hello/routers"
+	_ "beehello/routers"
 )
 
 func main() {
