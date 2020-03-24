@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+./beehello
 while true
 do
     echo "运行正常"
