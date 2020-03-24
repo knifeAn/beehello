@@ -1,5 +1,5 @@
 #docker镜像制作
-FROM golang:latest
+FROM alpine:latest
 MAINTAINER "anxiaodong"
 WORKDIR /home/anxiaodong/jenkins
 ADD . /home/anxiaodong/jenkins
