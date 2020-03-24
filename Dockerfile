@@ -6,5 +6,5 @@ ADD . /home/anxiaodong/jenkins
 #FROM scratch AS prod
 COPY ./beehello /home/anxiaodong/jenkins/deployment/script/ 
 EXPOSE 8080
-CMD ["/bin/bash", "deployment/script/start.sh"]
-#ENTRYPOINT ["./beehello"]
+#CMD ["/bin/bash", "deployment/script/start.sh"]
+ENTRYPOINT ["./beehello"]
