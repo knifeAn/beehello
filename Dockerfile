@@ -5,6 +5,6 @@ WORKDIR /home/anxiaodong/jenkins
 ADD . /home/anxiaodong/jenkins
 COPY ./beehello /home/anxiaodong/jenkins/deployment/script/
 #RUN go build .
-EXPOSE 8084
+EXPOSE 8080
 CMD ["/bin/bash", "deployment/script/start.sh"]
 #ENTRYPOINT ["./beehello"]
