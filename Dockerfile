@@ -1,10 +1,10 @@
 #docker镜像制作
-FROM alpine:latest
+FROM golang:latest AS build
 MAINTAINER "anxiaodong"
 WORKDIR /home/anxiaodong/jenkins
 ADD . /home/anxiaodong/jenkins
+FROM scratch AS prod
 RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/main/" > /etc/apk/repositories
-
 RUN apk update \
         && apk upgrade \
         && apk add --no-cache bash \
