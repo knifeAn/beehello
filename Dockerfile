@@ -1,12 +1,10 @@
 #docker镜像制作
-FROM golang:latest AS build
+FROM golang:latest
 MAINTAINER "anxiaodong"
 WORKDIR /home/anxiaodong/jenkins
 ADD . /home/anxiaodong/jenkins
-CMD ["/bin/bash", "deployment/script/start.sh"]
-FROM scratch AS prod
-#COPY  --from=build  /home/anxiaodong/jenkins/deployment/script/ .
-COPY  ./beehello  /home/anxiaodong/jenkins/deployment/script/ 
+#FROM scratch AS prod
+COPY ./beehello /home/anxiaodong/jenkins/deployment/script/
 EXPOSE 8080
-CMD ["./home/anxiaodong/jenkins/deployment/script/beehello"]
+CMD ["/bin/bash", "deployment/script/start.sh"]
 #ENTRYPOINT ["./home/anxiaodong/jenkins/deployment/script/beehello"]
