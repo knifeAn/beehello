@@ -10,4 +10,4 @@ CMD ["/bin/bash", "deployment/script/start.sh"]
 #ENTRYPOINT ["./home/anxiaodong/jenkins/deployment/script/beehello"]
 FROM scratch AS prod
 COPY  --from=builder  /home/anxiaodong/jenkins/deployment/script/beehello .
-CMD ["./beehello"]
+CMD ["/bin/bash", "deployment/script/start.sh"]
