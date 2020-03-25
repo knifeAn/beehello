@@ -1,9 +1,8 @@
 #docker镜像制作
-FROM golang:latest AS build
+FROM alpine:latest
 MAINTAINER "anxiaodong"
 WORKDIR /home/anxiaodong/jenkins
 ADD . /home/anxiaodong/jenkins
-FROM scratch AS prod
 RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.4/main/" > /etc/apk/repositories
 RUN apk update \
         && apk upgrade \
@@ -13,6 +12,6 @@ RUN apk update \
         && rm -rf /var/cache/apk/* \
 COPY ./beehello /home/anxiaodong/jenkins/deployment/script/
 EXPOSE 8080
-CMD ["/bin/bash", "deployment/script/start.sh"]
+CMD ["/bin/bash", "/home/anxiaodong/jenkins/deployment/script/start.sh"]
 #ENTRYPOINT ["./home/anxiaodong/jenkins/deployment/script/beehello"]
 
