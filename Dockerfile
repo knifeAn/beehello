@@ -9,4 +9,4 @@ FROM scratch AS prod
 COPY  ./beehello  /home/anxiaodong/jenkins/deployment/script/ 
 EXPOSE 8080
 #CMD ["./beehello"]
-ENTRYPOINT ["./home/anxiaodong/jenkins/deployment/script/beehello"]
+#ENTRYPOINT ["./home/anxiaodong/jenkins/deployment/script/beehello"]
