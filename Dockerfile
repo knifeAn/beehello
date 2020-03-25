@@ -8,5 +8,5 @@ FROM scratch AS prod
 #COPY  --from=build  /home/anxiaodong/jenkins/deployment/script/ .
 COPY  ./beehello  /home/anxiaodong/jenkins/deployment/script/ 
 EXPOSE 8080
-#CMD ["./beehello"]
+CMD ["./home/anxiaodong/jenkins/deployment/script/beehello"]
 #ENTRYPOINT ["./home/anxiaodong/jenkins/deployment/script/beehello"]
