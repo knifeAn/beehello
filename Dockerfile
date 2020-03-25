@@ -5,8 +5,8 @@ WORKDIR /home/anxiaodong/jenkins
 ADD . /home/anxiaodong/jenkins
 FROM scratch AS prod
 RUN CGO_ENABLED=0 GOOS=linux go build -o .
-COPY --from=build  ./home/anxiaodong/jenkins/deployment/script/ 
-COPY ./beehello ./home/anxiaodong/jenkins/deployment/script/
+COPY  --from=build  /home/anxiaodong/jenkins/deployment/script/ .
+COPY  ./beehello  /home/anxiaodong/jenkins/deployment/script/ .
 EXPOSE 8080
 #CMD ["/bin/bash", "deployment/script/start.sh"]
 CMD ["./beehello"]
