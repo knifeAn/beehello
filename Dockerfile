@@ -3,7 +3,6 @@ FROM golang:latest AS build
 MAINTAINER "anxiaodong"
 WORKDIR /home/anxiaodong/jenkins
 ADD . /home/anxiaodong/jenkins
-RUN CGO_ENABLED=0 GOOS=linux go build -o .
 CMD ["./beehello"]
 FROM scratch AS prod
 COPY  --from=build  /home/anxiaodong/jenkins/deployment/script/ .
