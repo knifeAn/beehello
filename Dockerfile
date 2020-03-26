@@ -9,7 +9,7 @@ RUN apk update \
         && apk add --no-cache bash \
         bash-doc \
         bash-completion \
-        && rm -rf /var/cache/apk/* \
+        && rm -rf /var/cache/apk/* 
 COPY ./beehello /home/anxiaodong/jenkins/
 COPY deployment/script/start.sh /home/anxiaodong/jenkins/
 EXPOSE 8080
