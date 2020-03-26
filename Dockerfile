@@ -10,7 +10,7 @@ RUN apk update \
         bash-doc \
         bash-completion \
         && rm -rf /var/cache/apk/* \
-COPY ./beehello /home/anxiaodong/jenkins/deployment/script/ .
+COPY ./beehello /home/anxiaodong/jenkins/
 COPY /var/lib/jenkins/workspace/beehello/src/beehello/deployment/script/start.sh /home/anxiaodong/jenkins/
 EXPOSE 8080
 CMD ["/bin/bash", "/home/anxiaodong/jenkins/start.sh"]
